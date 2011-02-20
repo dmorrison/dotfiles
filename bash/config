@@ -40,8 +40,6 @@ BWHITE='\e[47m'
 
 # Update the command prompt to be <user>:<current_directory> [git_branch] >
 # Note that the git branch is given a special color
-#PS1="\n\u:\w \[$EBLACK\]\$(vcprompt)\[$NO_COLOR\] \n→ "
-# Coloring with EBLACK didn't work on my terminal theme, so I just used...
-export PS1="\n\u:\w \$(vcprompt) \n→ "
+export PS1="\n\u:\w \[$YELLOW\]\$(vcprompt)\[$NO_COLOR\] \n→ "
 
 export EDITOR="mate_wait"

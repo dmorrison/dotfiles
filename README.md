@@ -1,4 +1,4 @@
-# Derek Morrison's Dot Files
+# Derek's Dot Files
 
 My personalizations to Ryan Bates's [dotfiles](https://github.com/ryanb/dotfiles) repository.
 

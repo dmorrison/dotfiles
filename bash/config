@@ -38,8 +38,9 @@ BMAGENTA='\e[45m'
 BCYAN='\e[46m'
 BWHITE='\e[47m'
 
-# Update the command prompt to be <user>:<current_directory> [git_branch] >
+# Update the command prompt to be <user>:<current_directory> <rvm_prompt> [git_branch] >
 # Note that the git branch is given a special color
-export PS1="\n\u:\w \$(~/.rvm/bin/rvm-prompt) \[$YELLOW\]\$(vcprompt)\[$NO_COLOR\] \n→ "
+#export PS1="\n\u:\w \$(~/.rvm/bin/rvm-prompt) \[$YELLOW\]\$(vcprompt)\[$NO_COLOR\] \n→ "
+export PS1="\n\u:\w → "
 
 export EDITOR="mate_wait"

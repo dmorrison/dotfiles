@@ -1,11 +1,9 @@
 # cd
 alias ..='cd ..'
+alias cdw='cd ~/Development/Work'
 
 # ls
-alias ls="ls -F"
-alias l="ls -laF"
-alias ll="ls -l"
-alias la='ls -A'
+alias l='ls -lA1'
 
 # git
 alias ga='git add'
@@ -23,6 +21,10 @@ alias gpu='git pull'
 alias gcl='git clone'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
+
+# hg
+alias hs='hg status'
+alias hd='hg diff'
 
 # rails
 alias sc='script/console'

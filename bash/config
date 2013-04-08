@@ -38,9 +38,17 @@ BMAGENTA='\e[45m'
 BCYAN='\e[46m'
 BWHITE='\e[47m'
 
-# Update the command prompt to be <user>:<current_directory> <rvm_prompt> [git_branch] >
-# Note that the git branch is given a special color
-#export PS1="\n\u:\w \$(~/.rvm/bin/rvm-prompt) \[$YELLOW\]\$(vcprompt)\[$NO_COLOR\] \n→ "
-export PS1="\n\u:\w → "
+# Symbols
+# 🍔
+# →
+
+# To insert an <rvm_prompt> token:
+# \$(~/.rvm/bin/rvm-prompt)
+
+# To insert a <git_branch> token with color:
+# \[$YELLOW\]\$(vcprompt)\[$NO_COLOR\]
+
+# Update the command prompt to be in color: <current_directory> →
+export PS1="\n\[$CYAN\]\w\[$NO_COLOR\] → "
 
 export EDITOR="mate_wait"

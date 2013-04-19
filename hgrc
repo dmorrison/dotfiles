@@ -1,0 +1,6 @@
+[ui]
+username = Derek Morrison <derek.morrison@marketvine.com>
+
+[extensions]
+hgext.purge =
+hgext.hgshelve = ~/.hgext/hgshelve.py

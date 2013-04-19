@@ -7,9 +7,6 @@ task :install do
   Dir['*'].each do |file|
     next if %w[Rakefile README.md].include? file
     
-    # exclude files from ryanb's original that I don't currently use
-    next if %w[gemrc gitconfig.erb gitignore gvimrc irbrc railsrc vim vimrc].include? file
-    
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"))
       if File.identical? file, File.join(ENV['HOME'], ".#{file.sub('.erb', '')}")
         puts "identical ~/.#{file.sub('.erb', '')}"

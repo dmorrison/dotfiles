@@ -42,13 +42,13 @@ BWHITE='\e[47m'
 # 🍔
 # →
 
-# To insert an <rvm_prompt> token:
+# To insert RVM prompt information:
 # \$(~/.rvm/bin/rvm-prompt)
 
-# To insert a <git_branch> token with color:
+# To insert source control information with color:
 # \[$YELLOW\]\$(vcprompt)\[$NO_COLOR\]
 
-# Update the command prompt to be in color: <current_directory> →
-export PS1="\n\[$CYAN\]\w\[$NO_COLOR\] → "
+# Set the command prompt to be in color: <current_directory> <vc_prompt> →
+export PS1="\n\[$CYAN\]\w\[$NO_COLOR\] \[$YELLOW\]\$(vcprompt -f \"%s:%b \")\[$NO_COLOR\]→ "
 
 export EDITOR="mate_wait"

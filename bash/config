@@ -49,6 +49,6 @@ BWHITE='\e[47m'
 # \[$YELLOW\]\$(vcprompt)\[$NO_COLOR\]
 
 # Set the command prompt to be in color: <current_directory> <vc_prompt> →
-export PS1="\n\[$CYAN\]\w\[$NO_COLOR\] \[$YELLOW\]\$(vcprompt -f \"%s:%b \")\[$NO_COLOR\]→ "
+export PS1="\n\[$CYAN\]\w\[$NO_COLOR\] \[$YELLOW\]\$(vcprompt -f \"[%s:%b] \")\[$NO_COLOR\]→ "
 
 export EDITOR="mate_wait"

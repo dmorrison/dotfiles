@@ -1,6 +1,7 @@
 # cd
 alias ..='cd ..'
 alias ~='cd ~'
+alias cdp='cd ~/Development/Personal'
 alias cdw='cd ~/Development/Work'
 
 # ls

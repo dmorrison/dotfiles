@@ -1,5 +1,5 @@
 [ui]
-username = Derek Morrison <derek.morrison@marketvine.com>
+username = Derek Morrison <derek@marketvine.com>
 
 [extensions]
 hgext.purge =

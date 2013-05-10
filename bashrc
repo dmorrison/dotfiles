@@ -3,7 +3,8 @@ source ~/.bash/aliases
 source ~/.bash/paths
 source ~/.bash/config
 
-# [[ -s "/Users/Derek/.rvm/scripts/rvm" ]] && source "/Users/Derek/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+# initialize rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # use .localrc for settings specific to one system
 if [ -f ~/.localrc ]; then

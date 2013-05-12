@@ -1,0 +1,50 @@
+#!/usr/bin/env ruby
+
+#############################################################
+# Looks through each sub-directory in the current directory
+# (or given directory path if passed as an argument) for all
+# Mercurial repositories and calls a Mercurial pull with
+# update (hg pull -u). Searches directories recursively until
+# a Mercurial repository is found.
+#############################################################
+
+require "thread"
+
+# If a directory path was passed, cd to it. Else, we'll
+# start in the current working dir.
+if ARGV.length > 0
+    Dir.chdir ARGV[0]
+end
+
+# Is the start directory a repo? If so, pull, update, then stop here.
+if Dir.glob(".hg").length > 0
+    puts "Found Mercurial respository in #{Dir.pwd}. Pulling and updating..."
+    `hg pull -u -R #{Dir.pwd}`
+    exit
+end
+
+# Start a queue with the full paths of all sub-directories in
+# the starting directory.
+queue = Queue.new
+Dir.glob("*/").each do |dir|
+    queue.enq "#{Dir.pwd}/#{dir}"
+end
+
+# Dequeue each sub-directory and check if it's a Mercurial
+# repository. If it is, call `hg pull -u`. If not, then enqueue
+# all of that directory's sub-directories.
+until queue.empty?
+    dir = queue.deq
+    Dir.chdir dir
+
+    if Dir.glob(".hg").length > 0
+        puts "Found Mercurial respository in #{dir}. Pulling and updating..."
+        `hg pull -u -R #{dir}`
+    else
+        puts "Directory \"#{dir}\" is not repo. Adding its sub-directories to the search."
+
+        Dir.glob("*/").each do |sub_dir|
+            queue.enq "#{Dir.pwd}/#{sub_dir}"
+        end
+    end
+end

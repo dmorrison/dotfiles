@@ -10,8 +10,8 @@ set nocompatible
 "set nobackup
 "set nowritebackup
 "set history=50		" keep 50 lines of command line history
-"set ruler		" show the cursor position all the time
-"set showcmd		" display incomplete commands
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
 "set incsearch		" do incremental searching
 "
 "" Don't use Ex mode, use Q for formatting
@@ -66,9 +66,9 @@ set nocompatible
 "  augroup END
 "
 "else
-"
-"  set autoindent		" always set autoindenting on
-"
+
+  set autoindent		" always set autoindenting on
+
 "endif " has("autocmd")
 "
 "" if has("folding")
@@ -78,15 +78,15 @@ set nocompatible
 "  " set foldnestmax=2
 "  " set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
 "" endif
-"
-"" Softtabs, 2 spaces
-"set tabstop=2
-"set shiftwidth=2
-"set expandtab
-"
-"" Always display the status line
-"set laststatus=2
-"
+
+" Soft tabs, 4 spaces
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" Always display the status line
+set laststatus=2
+
 "" \ is the leader character
 "let mapleader = ","
 "

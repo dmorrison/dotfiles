@@ -20,14 +20,14 @@ set showcmd		" display incomplete commands
 "" This is an alternative that also works in block mode, but the deleted
 "" text is lost and it only works for putting the current register.
 ""vnoremap p "_dp
-"
-"" Switch syntax highlighting on, when the terminal has colors
-"" Also switch on highlighting the last used search pattern.
-"if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-"  syntax on
-"  set hlsearch
-"endif
-"
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+  syntax on
+  set hlsearch
+endif
+
 "" Switch wrap off for everything
 "set nowrap
 "

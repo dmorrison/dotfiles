@@ -48,5 +48,6 @@ BWHITE='\e[47m'
 # Set the command prompt to be in color: <current_directory> [<vc_prompt>] →
 export PS1="\n\[$CYAN\]\w\[$NO_COLOR\] \[$YELLOW\]\$(vcprompt -f \"[%s:%b] \")\[$NO_COLOR\]→ "
 
-# Used by e.g. `hg commit` when `-m` isn't specified.
-export EDITOR="mate -w"
+export EDITOR="mvim -f"
+export VISUAL="mvim -f"
+

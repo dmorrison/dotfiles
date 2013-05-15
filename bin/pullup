@@ -21,22 +21,22 @@ end
 queue = Queue.new
 queue.enq Dir.pwd
 
-needs_head_space = false
-
 # Dequeue each sub-directory and check if it's a Mercurial
 # repository. If it is, pull and update. If not, then enqueue
 # all of that directory's sub-directories.
+needs_head_space = false
+
 until queue.empty?
     dir = queue.deq
     Dir.chdir dir
 
     if Dir.glob(".hg").length > 0
         if needs_head_space then puts else needs_head_space = true end
-        puts "Found Mercurial respository in #{dir}. Pulling and updating:"
+        puts "Found Mercurial respository in #{dir}."
         puts `hg pull -u -R #{dir}`
     else
         if needs_head_space then puts else needs_head_space = true end
-        puts "Directory \"#{dir}\" is not repo. Adding its sub-directories to the search."
+        puts "Directory \"#{dir}\" is not repo. Adding its sub-directories to the queue."
 
         Dir.glob("*/").each do |sub_dir|
             queue.enq "#{Dir.pwd}/#{sub_dir}"

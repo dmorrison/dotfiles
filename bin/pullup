@@ -16,21 +16,12 @@ if ARGV.length > 0
     Dir.chdir ARGV[0]
 end
 
-# Is the start directory a repo? If so, pull, update, then stop here.
-if Dir.glob(".hg").length > 0
-    puts "Found Mercurial respository in #{Dir.pwd}. Pulling and updating:"
-    puts `hg pull -u -R #{Dir.pwd}`
-    exit
-end
-
-needs_space = false
-
-# Start a queue with the full paths of all sub-directories in
-# the starting directory.
+# Create a queue of directories to process (starting with
+# the current one.
 queue = Queue.new
-Dir.glob("*/").each do |dir|
-    queue.enq "#{Dir.pwd}/#{dir}"
-end
+queue.enq Dir.pwd
+
+needs_head_space = false
 
 # Dequeue each sub-directory and check if it's a Mercurial
 # repository. If it is, pull and update. If not, then enqueue
@@ -40,11 +31,11 @@ until queue.empty?
     Dir.chdir dir
 
     if Dir.glob(".hg").length > 0
-        if needs_space then puts else needs_space = true end
+        if needs_head_space then puts else needs_head_space = true end
         puts "Found Mercurial respository in #{dir}. Pulling and updating:"
         puts `hg pull -u -R #{dir}`
     else
-        if needs_space then puts else needs_space = true end
+        if needs_head_space then puts else needs_head_space = true end
         puts "Directory \"#{dir}\" is not repo. Adding its sub-directories to the search."
 
         Dir.glob("*/").each do |sub_dir|

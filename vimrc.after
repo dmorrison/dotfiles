@@ -1,2 +1,6 @@
-set tabstop=4
-set shiftwidth=4
+set ts=4 sts=4 sw=4
+
+" Supposedly allows y,Y, etc operations to be reflectved in the clipboard...
+set clipboard=unnamed
+
+set guifont=Monaco:h13

@@ -1,4 +1,4 @@
-# Colors from http://wiki.archlinux.org/index.php/Color_Bash_Prompt
+# colors from http://wiki.archlinux.org/index.php/Color_Bash_Prompt
 # misc
 NO_COLOR='\e[0m' #disable any colors
 # regular colors
@@ -38,16 +38,20 @@ BMAGENTA='\e[45m'
 BCYAN='\e[46m'
 BWHITE='\e[47m'
 
-# Symbols
-# 🍔
-# →
-
-# To insert RVM prompt information:
-# \$(~/.rvm/bin/rvm-prompt)
-
-# Set the command prompt to be in color: <current_directory> [<vc_prompt>] →
-export PS1="\n\[$CYAN\]\w\[$NO_COLOR\] \[$YELLOW\]\$(vcprompt -f \"[%s:%b] \")\[$NO_COLOR\]→ "
-
+# set Vim to be the default editor
 export EDITOR="mvim -f"
 export VISUAL="mvim -f"
+
+# virtualenv settings
+export PIP_REQUIRE_VIRTUALENV=true # tell pip to only run if there is a virtualenv currently activated
+export PIP_RESPECT_VIRTUALENV=true # tell pip to install packages into the active virtualenv environment
+export VIRTUALENV_DISTRIBUTE=true  # tell virtualenv to use Distribute instead of legacy setuptools
+export VIRTUAL_ENV_DISABLE_PROMPT=true # tell virtualenv not to modify my prompt
+
+# set a default virtualenv
+. ~/.virtualenvs/default/bin/activate
+
+# set the command prompt to be in color with the format: 
+# <current_directory> (virtualenv info) [<vc prompt>] →
+export PS1="\n\[$CYAN\]\w\[$NO_COLOR\] \[$GREEN\]$(virtualenvinfo)\[$NO_COLOR\]\[$YELLOW\]\$(vcprompt -f \"[%s:%b] \")\[$NO_COLOR\]→ "
 

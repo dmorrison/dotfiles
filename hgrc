@@ -4,3 +4,4 @@ username = Derek Morrison <derek@marketvine.com>
 [extensions]
 hgext.purge =
 hgext.hgshelve = ~/.hgext/hgshelve.py
+hgext.convert =

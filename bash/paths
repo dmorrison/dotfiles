@@ -1,1 +1,5 @@
-export PATH=~/.bin:/usr/local/share/python:$PATH
+# Put things here in reverse order of least to most significant.
+
+export PATH=/usr/local/share/python:$PATH  # For virtualenv
+export PATH=~/.bin:$PATH
+export PATH=./bin:$PATH  # For Bundler binstubs

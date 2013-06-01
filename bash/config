@@ -53,5 +53,6 @@ export VIRTUAL_ENV_DISABLE_PROMPT=true # tell virtualenv not to modify my prompt
 
 # set the command prompt to be in color with the format: 
 # <current_directory> (virtualenv info) [<vc prompt>] →
-export PS1="\n\[$CYAN\]\w\[$NO_COLOR\] \[$GREEN\]$(virtualenvinfo)\[$NO_COLOR\]\[$YELLOW\]\$(vcprompt -f \"[%s:%b] \")\[$NO_COLOR\]→ "
+#export PS1="\n\[$CYAN\]\w\[$NO_COLOR\] \[$GREEN\]$(virtualenvinfo)\[$NO_COLOR\]\[$YELLOW\]\$(vcprompt -f \"[%s:%b] \")\[$NO_COLOR\]→ "
+export PS1="\n\[$CYAN\]\w\[$NO_COLOR\] \[$YELLOW\]\$(vcprompt -f \"[%s:%b] \")\[$NO_COLOR\]→ "
 

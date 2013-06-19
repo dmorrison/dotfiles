@@ -6,9 +6,9 @@ task :install do
   replace_all = false
   Dir['*'].each do |file|
     next if %w[Rakefile README.md].include? file
-    
+
     # skip some items from original dotfiles repo that I don't use currently
-    next if %w[vimrc gvimrc vim gemrc irbrc railsrc].include? file
+    next if %w[irbrc railsrc].include? file
 
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"))
       if File.identical? file, File.join(ENV['HOME'], ".#{file.sub('.erb', '')}")

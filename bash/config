@@ -42,6 +42,9 @@ BWHITE='\e[47m'
 export EDITOR="mvim -f"
 export VISUAL="mvim -f"
 
+# run rehash manually (since I'm not using rbenv init anymore)
+rbenv rehash
+
 # virtualenv settings
 export PIP_REQUIRE_VIRTUALENV=true # tell pip to only run if there is a virtualenv currently activated
 export PIP_RESPECT_VIRTUALENV=true # tell pip to install packages into the active virtualenv environment

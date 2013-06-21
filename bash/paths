@@ -2,4 +2,5 @@
 
 export PATH=/usr/local/share/python:$PATH  # For virtualenv
 export PATH=~/.bin:$PATH
-export PATH=./bin:$PATH  # For Bundler binstubs
+export PATH=~/.rbenv/shims:$PATH
+export PATH=./bin:$PATH  # For Bundler binstubs (SHOULD TAKE PRECENDENCE OVER RBENV)

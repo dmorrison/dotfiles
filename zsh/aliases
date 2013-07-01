@@ -30,6 +30,10 @@ alias hs='hg status'
 alias hd='hg diff'
 alias hcm='hg commit -m'
 
+# bundler
+alias bi='bundle install --path vendor/bundle --without production'
+alias b='bundle exec'
+
 ## rails
 #alias sc='script/console'
 #alias ss='script/server'

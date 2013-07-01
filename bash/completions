@@ -1,9 +1,6 @@
 # include brewed Git completions
 source /usr/local/etc/bash_completion.d/git-completion.bash
 
-# manual step for rbenv (since I'm not using its init anymore)
-source /usr/local/Cellar/rbenv/0.4.0/completions/rbenv.bash
-
 #source ~/.bash/completion_scripts/git_completion
 #complete -C ~/.bash/completion_scripts/rake_completion -o default rake
 #complete -C ~/.bash/completion_scripts/project_completion -o default c

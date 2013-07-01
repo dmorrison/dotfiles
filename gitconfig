@@ -12,5 +12,5 @@
 	default = simple  # Opt in to the upcoming default push mode
 [apply]
 	whitespace = nowarn
-[format]
-	pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
+#[format]
+#	pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset

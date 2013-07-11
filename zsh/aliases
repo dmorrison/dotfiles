@@ -5,7 +5,7 @@ alias cdw='cd ~/Development/Work'
 
 # ls
 alias l='ls -lA1F'
-alias la='ls -lAF'
+alias ll='ls -lAF'
 
 # git
 alias ga='git add'

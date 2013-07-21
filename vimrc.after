@@ -4,6 +4,73 @@ set ts=2 sts=2 sw=2
 set clipboard=unnamed
 
 " Reveals the current buffer in NERDTree
-nmap ,r :NERDTreeFind<CR>
+nmap ,t :NERDTreeFind<CR>
 
 set guifont=Monaco:h13
+
+color desert
+
+" ---
+" From Chris
+" ---
+
+" Allow hidden buffers.
+set hidden
+
+" Delete word under cursor while in insert mode.
+:imap <C-d> <C-[>ldawi
+
+" I dont like highlighted search.
+"set nohlsearch
+
+" I don't like incremental search either.
+"set noincsearch
+
+" Set my own invisibles.
+set listchars=tab:▸\ ,eol:¬
+
+" Toggle invisibles.
+nmap <leader>l :set list!<CR>
+
+" ConqueTerm
+nmap <leader>ts :ConqueTermSplit bash --login<CR>
+
+" I don't like comment continuation.
+set fo-=r 
+
+" TagList plugin stuff.
+"nmap <D-y> :TlistToggle<CR>
+"let g:Tlist_Process_File_Always = 1
+"let g:Tlist_Show_One_File = 1
+"let g:Tlist_Use_Right_Window = 1
+"let g:Tlist_WinWidth = 50
+"let g:Tlist_Exit_OnlyWindow = 1
+"let g:Tlist_GainFocus_On_ToggleOpen = 1
+"let g:Tlist_Close_On_Select = 1
+
+" Tagbar plugin stuff (replaced TagList).
+nmap <D-y> :TagbarToggle<CR>
+let g:tagbar_autoclose = 1
+let g:tagbar_autofocus = 1
+
+" Ignore stull when using Command-T
+set wildignore+=vendor/bundle,vendor/cache,pkg
+set wildignore+=solr/data
+
+" Let tab key cycle through windows
+nmap <TAB> <C-w>w
+
+" Code folding
+set foldmethod=manual " foldmethod=syntax causes massive slowness
+set foldlevelstart=20
+map + za
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bundle$',
+  \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
+  \ }
+
+" Automatically delete hidden buffers.  In English,
+" only keep files open that are in view.
+"autocmd BufEnter * setlocal bufhidden=delete
+

@@ -29,6 +29,7 @@ alias hcm='hg commit -m'
 # bundler
 alias bi='bundle install --path vendor/bundle --without production'
 alias b='bundle exec'
+alias be='b'
 
 # misc
 alias h='history'

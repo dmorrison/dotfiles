@@ -1,14 +1,17 @@
 set ts=2 sts=2 sw=2
 
+set guifont=Monaco:h13
+
+color desert
+
 " Allows y,Y, etc operations to be reflected in the clipboard
 set clipboard=unnamed
 
 " Reveals the current buffer in NERDTree
 nmap ,t :NERDTreeFind<CR>
 
-set guifont=Monaco:h13
-
-color desert
+" For vim-nerdtree-tabs plugin
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 " ---
 " From Chris

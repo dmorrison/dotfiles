@@ -2,7 +2,8 @@
 alias ..='cd ..'
 alias cdp='cd ~/Development/Personal'
 alias cdw='cd ~/Development/Work'
-alias cdsm='cd ~/Development/Work/scholarship_manager'
+alias cds='cd ~/Development/Work/scholarship_manager'
+alias cdc='cd ~/Development/Work/ChefGordon'
 
 # ls
 alias ll='ls -lhAF'

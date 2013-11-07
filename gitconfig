@@ -9,7 +9,7 @@
 	excludesfile = /Users/Derek/.gitignore_global
 	autocrlf = input  # Convert CRLF when storing in Git, but not when checking out. Recommended for OS X.
 [push]
-	default = simple  # Opt in to the upcoming default push mode
+	default = simple  # Opt in to the default push mode in Git 2.
 [apply]
 	whitespace = nowarn
 #[format]

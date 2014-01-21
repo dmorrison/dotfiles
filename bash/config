@@ -57,7 +57,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=true # tell virtualenv not to modify my prompt
 # prompt stuff
 # ==============
 # REMEMBER TO USE \ IN FRONT OF $(...) TO UPDATE DYNAMICALLY!!
-export PS1="\n\[$CYAN\]\w\[$NO_COLOR\] with \[$RED\]\$(rbenv version-name)\[$NO_COLOR\] \$(vcprompt -f \"on \[$YELLOW\]%b\[$NO_COLOR\] \")→ "
+export PS1="\[$CYAN\]\w\[$NO_COLOR\] \$(vcprompt -f \"on \[$YELLOW\]%b\[$NO_COLOR\] \")→ "
 
 # to put virtualenv in prompt...
 # \[$GREEN\]\$(virtualenvinfo)\[$NO_COLOR\]

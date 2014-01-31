@@ -54,6 +54,10 @@ export VIRTUAL_ENV_DISABLE_PROMPT=true # tell virtualenv not to modify my prompt
 # set a default virtualenv
 . ~/.virtualenvs/default/bin/activate
 
+# turn off autossh's default monitoring (it will use the ssh client's
+# monitoring instead - i.e. ServerAliveInterval and ServerAliveCountMax).
+export AUTOSSH_PORT=0
+
 # prompt stuff
 # ==============
 # REMEMBER TO USE \ IN FRONT OF $(...) TO UPDATE DYNAMICALLY!!

@@ -1,2 +1,2 @@
 # Put things here in reverse order of least to most significant.
-export PATH=~/.bin:$PATH
+export PATH=~/.bin:./vendor/bundle/binstubs:$PATH

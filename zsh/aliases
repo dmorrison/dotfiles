@@ -26,7 +26,7 @@ alias hd='hg diff'
 alias hcm='hg commit -m'
 
 # bundler
-alias bi='bundle install --path vendor/bundle --binstubs vendor/bundle/binstubs --jobs 4 --without production'
+#alias bi='bundle install --path vendor/bundle --binstubs vendor/bundle/binstubs --jobs 4 --without production'
 alias b='bundle exec'
 alias be='b'
 

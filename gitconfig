@@ -23,3 +23,5 @@
   show-merged = !git branch --merged | grep -vE 'next|master' | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%ar)' -1
 
   remove-merged = !git branch --merged | grep -vE 'next|master' | xargs git branch -d
+
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit

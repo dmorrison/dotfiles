@@ -39,8 +39,10 @@ BCYAN='\e[46m'
 BWHITE='\e[47m'
 
 # set Vim to be the default editor
-export EDITOR="mvim -f"
-export VISUAL="mvim -f"
+#export EDITOR="mvim -f"
+#export VISUAL="mvim -f"
+export EDITOR="vim"
+export VISUAL="vim"
 
 # initialize rbenv
 eval "$(rbenv init -)"

@@ -3,8 +3,3 @@
 *~
 .*.swp
 *.pyc
-.bundle
-
-# For Bundler. Ignore Gems installed to a local project and binstubs.
-/vendor/bundle
-/bin

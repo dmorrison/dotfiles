@@ -1,1 +1,0 @@
-export PATH=./vendor/bundle/binstubs:./bin:~/.bin:$PATH

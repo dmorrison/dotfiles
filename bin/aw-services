@@ -1,0 +1,28 @@
+
+plists[0]="~/Library/LaunchAgents/homebrew.mxcl.cassandra12.plist"
+plists[1]="~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
+plists[2]="~/Library/LaunchAgents/homebrew.mxcl.memcached.plist"
+plists[3]="~/Library/LaunchAgents/homebrew.mxcl.postgresql92.plist"
+plists[4]="~/Library/LaunchAgents/homebrew.mxcl.redis.plist"
+
+case $1 in
+	start)
+		for ((i=0; i<${#plists[@]}; i++))
+		do
+			eval "launchctl load ${plists[$i]}"
+		done
+		;;
+	stop)
+		for ((i=0; i<${#plists[@]}; i++))
+		do
+			eval "launchctl unload ${plists[$i]}"
+		done
+
+		# Redis doesn't die on unload, so...
+		pkill redis-server
+		;;
+	*)
+		echo $0 start or stop
+		;;
+esac
+

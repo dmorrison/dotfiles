@@ -56,7 +56,7 @@ nmap <D-y> :TagbarToggle<CR>
 let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
 
-" Ignore stull when using Command-T
+" Ignore stuff when using Command-T
 set wildignore+=vendor/bundle,vendor/cache,pkg
 set wildignore+=solr/data
 
@@ -76,4 +76,9 @@ let g:ctrlp_custom_ignore = {
 " Automatically delete hidden buffers.  In English,
 " only keep files open that are in view.
 "autocmd BufEnter * setlocal bufhidden=delete
+
+" Enable the list of buffers in Airline.
+"let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+"filenamelet g:airline#extensions#tabline#fnamemod = ':t'
 

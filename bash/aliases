@@ -4,7 +4,7 @@ alias ..='cd ..'
 alias cdp='cd ~/Development/Personal'
 alias cdw='cd ~/Development/Work'
 alias cds='cd ~/Development/Work/scholarship_manager'
-alias cde='cd ~/Development/Work/engineering'
+alias cde='cd ~/Development/Work/engineering_app'
 alias cdc='cd ~/Development/Work/chef_gordon'
 
 # ls

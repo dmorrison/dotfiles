@@ -1,5 +1,2 @@
-set ts=2 sts=2 sw=2
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 set autoindent
-
-" Allows y,Y, etc operations to be reflected in the clipboard
-set clipboard=unnamed

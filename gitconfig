@@ -1,21 +1,31 @@
 [user]
-	name = Derek Morrison
-	email = me@derek-morrison.com
+  name = Derek Morrison
+  email = me@derek-morrison.com
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+  diff = auto
+  status = auto
+  branch = auto
 [core]
-	excludesfile = /Users/Derek/.gitignore_global
-	autocrlf = input  # Convert CRLF when storing in Git, but not when checking out. Recommended for OS X.
+  excludesfile = /Users/Derek/.gitignore_global
+  autocrlf = input  # Convert CRLF when storing in Git, but not when checking out. Recommended for OS X.
 [push]
-	default = simple  # Opt in to the default push mode in Git 2.
+  default = simple  # Opt in to the default push mode in Git 2.
 [apply]
-	whitespace = nowarn
-#[format]
-#	pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
+  whitespace = nowarn
 [alias]
   co = checkout
+  a = add
+  p = pull
+  pu = push
+  put = push --tags
+  s = status
+  d = diff
+  cm = commit -m
+  b = branch
+  sl = stash list
+  t = tag
+
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 
   # Shows all local branches that have been fully merged
   # into the current branch. Shows PR branches that you've
@@ -23,7 +33,3 @@
   show-merged = !git branch --merged | grep -vE 'next|master' | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%ar)' -1
 
   remove-merged = !git branch --merged | grep -vE 'next|master' | xargs git branch -d
-
-  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
-
-  sl = stash list

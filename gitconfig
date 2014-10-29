@@ -6,7 +6,7 @@
   status = auto
   branch = auto
 [core]
-  excludesfile = /Users/Derek/.gitignore_global
+  excludesfile = ~/.gitignore_global
   autocrlf = input  # Convert CRLF when storing in Git, but not when checking out. Recommended for OS X.
 [push]
   default = simple  # Opt in to the default push mode in Git 2.
@@ -24,7 +24,6 @@
   b = branch
   sl = stash list
   t = tag
-
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 
   # Shows all local branches that have been fully merged

@@ -1,0 +1,15 @@
+
+# Fix namespacing issues.
+# http://www.economyofeffort.com/2013/07/29/reattach-to-user-namespace-the-fix-for-your-tmux-in-os-x-woes/
+set-option -g default-command "reattach-to-user-namespace -l bash"
+
+## Fix default name of windows being "reattach-to-user-namespace".
+#bind-key c new-window -n "hello"
+
+# Pipe to pbcopy when yanking.
+bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
+
+# Update default binding of 'Enter' to also use copy-pipe
+#unbind -t vi-copy Enter # Necessary?
+bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
+

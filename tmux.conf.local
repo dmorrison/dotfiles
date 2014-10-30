@@ -1,7 +1,7 @@
 
 # Fix namespacing issues.
 # http://www.economyofeffort.com/2013/07/29/reattach-to-user-namespace-the-fix-for-your-tmux-in-os-x-woes/
-set-option -g default-command "reattach-to-user-namespace -l bash"
+set-option -g default-command "/usr/local/bin/reattach-to-user-namespace -l /usr/local/bin/zsh"
 
 ## Fix default name of windows being "reattach-to-user-namespace".
 #bind-key c new-window -n "hello"

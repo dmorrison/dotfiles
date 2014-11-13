@@ -1,7 +1,0 @@
-# use up and down arrows for history search
-# e.g. type "cd" and hit up or down
-"\e[A": history-search-backward
-"\e[B": history-search-forward
-
-set show-all-if-ambiguous on
-set completion-ignore-case on

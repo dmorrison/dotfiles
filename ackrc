@@ -1,2 +1,3 @@
 --ignore-dir=vendor/bundle
 --ignore-dir=log
+--ignore-dir=.kitchen

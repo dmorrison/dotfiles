@@ -45,6 +45,7 @@ typeset -gU cdpath fpath mailpath path
 path=(
   ./vendor/bundle/binstubs
   ./bin
+  /usr/local/packer
   /usr/local/{bin,sbin}
   $path
 )

@@ -62,11 +62,12 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Mapping for Bufkill's :BD
-"nnoremap <C-d> :BD<CR>
+"nnoremap <C-d> :BD<cr>
 
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 
+" Easier buffer navigation.
 nmap <S-p> :bp<cr>
 nmap <S-n> :bn<cr>
 
@@ -80,6 +81,17 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Pane resizing
+map + <C-w>+
+map - <C-w>-
+map <C-n> <C-w><
+map <C-m> <C-w>>
+
 " Don't lose selection on indent in visual mode
 vnoremap > >gv
 vnoremap < <gv
+
+" Set ctrlp's working dir to the ancestor of this file... or something.
+" http://kien.github.io/ctrlp.vim/
+let g:ctrlp_working_path_mode = 'a'
+

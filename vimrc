@@ -68,6 +68,7 @@ nmap <leader>w :w<cr>
 
 " Copy & paste to system clipboard with <leader>p and <leader>y.
 vmap <leader>y "+y
+nmap <leader>Y "+Y
 vmap <leader>d "+d
 nmap <leader>p "+p
 nmap <leader>P "+P

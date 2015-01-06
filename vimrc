@@ -108,3 +108,6 @@ vnoremap < <gv
 " http://kien.github.io/ctrlp.vim/
 let g:ctrlp_working_path_mode = 'a'
 
+au BufRead,BufNewFile *.thor set filetype=ruby
+au BufRead,BufNewFile Thorfile set filetype=ruby
+

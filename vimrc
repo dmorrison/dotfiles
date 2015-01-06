@@ -54,6 +54,9 @@ colorscheme molokai
 " and command names. http://vim.wikia.com/wiki/Easier_buffer_switching
 set wildchar=<Tab> wildmenu wildmode=full
 
+" Fix delete/backspace not working. http://stackoverflow.com/a/3534090
+set backspace=indent,eol,start
+
 " Map space to leader instead of 'letting' to pop up something
 " in the showcmd corner.
 " http://www.reddit.com/r/vim/comments/1vdrxg/space_is_a_big_key_what_do_you_map_it_to/cerq68d

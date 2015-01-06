@@ -18,3 +18,4 @@ setopt incappendhistory
 alias bi="bundle install --binstubs .bundle/bin --jobs 6 --clean"
 alias bu="brew update && brew upgrade && brew cleanup && brew doctor"
 alias vi="vim"
+alias thor="nocorrect thor"

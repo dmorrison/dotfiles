@@ -46,6 +46,7 @@ path=(
   ./bin
   ./.bundle/bin
   /usr/local/packer
+  /usr/local/terraform
   /usr/local/{bin,sbin}
   $path
 )

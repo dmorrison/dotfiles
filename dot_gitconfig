@@ -1,0 +1,12 @@
+[alias]
+	s = status
+	a = add
+	d = diff
+	l = log
+	cmm = commit -m
+	co = checkout
+[user]
+	name = Derek Morrison
+	email = me@derek-morrison.com
+[pull]
+	rebase = false

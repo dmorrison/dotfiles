@@ -3,9 +3,11 @@
 clear
 
 echo "Starting install script..."
+echo
 
 echo "Getting sudo access..."
 sudo -v
+echo
 
 echo "Keeping sudo access until the script is finished..."
 while true; do
@@ -13,11 +15,13 @@ while true; do
   sleep 60
   kill -0 "$$" || exit
 done 2>/dev/null &
+echo
 
 echo "Installing Homebrew..."
 # Note: The Homebrew installation script installs the Command Line Developer Tools (needed
 # for Git, etc) if they're not already installed.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo
 
 echo "Setup complete!"
 echo

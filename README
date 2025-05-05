@@ -1,0 +1,3 @@
+Run this to install Chezmoi, initialize it, and apply my dotfiles:
+
+`sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://github.com/dmorrison/dotfiles.git`

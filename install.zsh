@@ -2,7 +2,7 @@
 
 clear
 
-echo "Starting install script...
+echo "Starting install script..."
 
 echo "Installing command-line-developer tools..."
 xcode-select --install

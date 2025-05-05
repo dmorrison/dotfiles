@@ -1,5 +1,3 @@
 Run this:
 
-`curl -sSL "raw.githubusercontent.com/dmorrison/dotfiles/main/install.zsh?$(date +%s)" | zsh`
-
-*Note*: The `date` part is for cache busting (just in case).
+`curl -sSL "[https://github.com/dmorrison/dotfiles/blob/main/install.zsh?raw=true" | zsh`

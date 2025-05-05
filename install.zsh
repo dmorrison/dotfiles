@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-clear
-
 echo "Starting install script..."
 echo
 

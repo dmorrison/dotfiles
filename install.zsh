@@ -17,11 +17,17 @@ while true; do
 done 2>/dev/null &
 echo
 
-echo "Installing Homebrew..."
-# Note: The Homebrew installation script installs the Command Line Developer Tools (needed
-# for Git, etc) if they're not already installed.
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo
+echo "Checking for Homebrew..."
+if ! command -v brew &> /dev/null; then
+  echo "Homebrew not found. Installing..."
+
+  # Note: The Homebrew installation script installs the Command Line Developer Tools (needed
+  # for Git, etc) if they're not already installed.
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo
+else
+  echo "Homebrew is already installed."
+  echo
+fi
 
 echo "Setup complete!"
-echo

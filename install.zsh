@@ -16,7 +16,9 @@ done 2>/dev/null &
 echo
 
 echo "Checking for Homebrew..."
-if ! command -v brew &> /dev/null; then
+if command -v brew &> /dev/null; then
+  echo "Homebrew is already installed."
+  echo
   echo "Homebrew not found. Installing..."
 
   # Note: The Homebrew installation script installs the Command Line Developer Tools (needed
@@ -24,12 +26,22 @@ if ! command -v brew &> /dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   echo
 else
-  echo "Homebrew is already installed."
+  echo "Homebrew not found. Installing..."
+
+  # Note: The Homebrew installation script installs the Command Line Developer Tools (needed
+  # for Git, etc) if they're not already installed.
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   echo
+
 fi
 
-echo "Installing Chezmoi (via Homebrew)..."
-brew install chezmoi
+echo "Checking if Chezmoi is installed..."
+if brew list --versions chezmoi &> /dev/null; then
+  echo "Chezmoi is already installed (via Homebrew)."
+else
+  echo "Chezmoi not found. Installing Chezmoi via Homebrew..."
+  brew install chezmoi
+fi
 echo
 
 echo "Setup complete!"

@@ -42,7 +42,7 @@ chezmoi init
 echo
 
 echo "Applying dotfiles..."
-chezmoi apply
+chezmoi apply -v
 echo
 
 echo "Setup complete!"

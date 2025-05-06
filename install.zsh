@@ -28,4 +28,8 @@ else
   echo
 fi
 
+echo "Installing Chezmoi (via Homebrew)..."
+brew install chezmoi
+echo
+
 echo "Setup complete!"

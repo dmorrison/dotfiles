@@ -1,5 +1,6 @@
 # Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
+
 ## --------------------------------
 ## Start of config templated from Oh My Zsh. It comes from
 ## $HOME/.oh-my-zsh/templates/zshrc.zsh-template.
@@ -15,10 +16,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-# ZSH_THEME="robbyrussell-pyenv"
+ZSH_THEME="robbyrussell"
 # ZSH_THEME="gozilla"
-ZSH_THEME="cobalt2"
+# ZSH_THEME="cobalt2"
 # ZSH_THEME="af-magic"
 
 # Set list of themes to pick from when loading at random
@@ -121,6 +121,7 @@ DISABLE_AUTO_UPDATE="true"
 
 # Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/m377065/.docker/completions $fpath)
 autoload -Uz compinit

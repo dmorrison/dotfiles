@@ -37,4 +37,12 @@ else
 fi
 echo
 
+echo "Initializing Chezmoi (if needed)..."
+chezmoi init
+echo
+
+echo "Applying dotfiles..."
+chezmoi apply
+echo
+
 echo "Setup complete!"

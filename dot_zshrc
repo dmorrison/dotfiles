@@ -1,6 +1,9 @@
 # Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 
+# Disable auto update, since this is done via Chezmoi.
+zstyle ':omz:update' mode disabled
+
 ## ----------------------------------------------------------------
 ## Start of config templated from Oh My Zsh. It comes from
 ## "$HOME/.oh-my-zsh/templates/zshrc.zsh-template".
@@ -119,9 +122,6 @@ source $ZSH/oh-my-zsh.sh
 ## End of config templated from Oh My Zsh. It cames from
 ## "$HOME/.oh-my-zsh/templates/zshrc.zsh-template".
 ## --------------------------------
-
-# Disable auto update, since this is done via Chezmoi
-DISABLE_AUTO_UPDATE="true"
 
 # Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"

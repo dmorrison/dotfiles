@@ -1,6 +1,14 @@
 # Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 
+# Set the base directory for user-specific config files. I am doing this
+# at the top of this file (instead of in "$ZSH_CUSTOM/variables.zsh") because
+# I want to use it to specify $ZSH_CUSTOM.
+export XDG_CONFIG_HOME="$HOME/.config"
+
+# Set the custom folder for Zsh to be one managed by Chezmoi.
+ZSH_CUSTOM="$XDG_CONFIG_HOME/oh-my-zsh/custom"
+
 # Disable auto update, since this is done via Chezmoi.
 zstyle ':omz:update' mode disabled
 
@@ -78,7 +86,6 @@ ZSH_THEME="robbyrussell"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
-ZSH_CUSTOM=~/.config/oh-my-zsh/custom
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/

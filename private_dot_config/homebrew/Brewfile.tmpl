@@ -1,0 +1,109 @@
+tap "homebrew/services"
+
+{{ if eq .hostType "work" }}
+# Work-specific taps
+tap "remotemobprogramming/brew"
+tap "saucelabs/tap"
+{{ end }}
+
+brew "chezmoi"
+brew "git"
+brew "jq"
+brew "mas"
+brew "tmux"
+brew "trash", link: true
+brew "tree"
+
+{{ if eq .hostType "work" }}
+# Work-specific brews
+brew "awscli"
+brew "docker-credential-helper-ecr"
+brew "nvm"
+brew "pkgconf"
+brew "pyenv"
+brew "yarn"
+brew "remotemobprogramming/brew/mob"
+{{ end }}
+
+cask "alt-tab"
+cask "bartender"
+cask "hazel"
+cask "karabiner-elements"
+cask "knockknock"
+cask "ngrok"
+cask "steermouse"
+
+{{ if eq .hostType "work" }}
+# Work-specific casks
+cask "aws-vault"
+{{ end }}
+
+mas "1Password for Safari", id: 1569813296
+mas "ColorSlurp", id: 1287239339
+mas "forScore", id: 363738376
+mas "Free Ruler", id: 1483172210
+mas "Messenger", id: 1480068668
+mas "Parcel", id: 639968404
+mas "Speedtest", id: 1153157709
+mas "Telegram", id: 747648890
+
+{{ if eq .hostType "work" }}
+# Work-specific mas apps
+mas "1Blocker", id: 1365531024
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Microsoft Word", id: 462054704
+mas "Notability", id: 360593530
+mas "Numbers", id: 409203825
+mas "OneDrive", id: 823766827
+mas "Pages", id: 409201541
+mas "Ping", id: 1532271726
+mas "Pins", id: 1547106997
+mas "Rapidmg", id: 6451349778
+mas "TickTick", id: 966085870
+mas "Tim", id: 1449619230
+mas "Twitter", id: 1482454543
+mas "Zapper", id: 1611386769
+{{ end }}
+
+{{ if eq .hostType "work" }}
+# Work-specific extensions for VS Code
+vscode "achil.vscode-javascript-repl"
+vscode "albert.tabout"
+vscode "alefragnani.bookmarks"
+vscode "amazonwebservices.codewhisperer-for-command-line-companion"
+vscode "amodio.tsl-problem-matcher"
+vscode "apollographql.vscode-apollo"
+vscode "bhughes339.replacerules"
+vscode "chrisdias.vscode-opennewinstance"
+vscode "dbaeumer.vscode-eslint"
+vscode "eamodio.gitlens"
+vscode "esbenp.prettier-vscode"
+vscode "github.copilot"
+vscode "github.copilot-chat"
+vscode "gitlab.gitlab-workflow"
+vscode "graphql.vscode-graphql"
+vscode "graphql.vscode-graphql-syntax"
+vscode "hogashi.vscode-copy-github-permalink"
+vscode "jacobcassidy.css-nesting-syntax-highlighting"
+vscode "nemesv.copy-file-name"
+vscode "orta.vscode-jest"
+vscode "richie5um2.vscode-sort-json"
+vscode "rphlmr.paperus"
+vscode "scootersoftware.bcompare-vscode"
+vscode "stkb.rewrap"
+vscode "stylelint.vscode-stylelint"
+vscode "toribio59.cyberpunk-yellow-theme"
+vscode "trybick.terminal-zoom"
+vscode "tyriar.sort-lines"
+vscode "unifiedjs.vscode-mdx"
+vscode "usama8800.tab-groups"
+vscode "viijay-kr.react-ts-css"
+vscode "vs-publisher-403103.cobalt-one-dark-plus"
+vscode "vscode-icons-team.vscode-icons"
+vscode "vunguyentuan.vscode-css-variables"
+vscode "wesbos.theme-cobalt2"
+vscode "wraith13.zoombar-vscode"
+vscode "yoavbls.pretty-ts-errors"
+vscode "zoxon.monokai-light"
+{{ end }}

@@ -45,4 +45,13 @@ echo "Applying dotfiles..."
 chezmoi apply -v
 echo
 
+echo "Installing/updating Homebrew items..."
+brew bundle install --global
+if [[ $? -ne 0 ]]; then
+  echo
+  echo "Error running brew bundle. Please check the output above."
+  exit 1
+fi
+echo
+
 echo "Setup complete!"

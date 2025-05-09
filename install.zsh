@@ -38,7 +38,7 @@ fi
 echo
 
 echo "Initializing Chezmoi (if needed)..."
-chezmoi init
+chezmoi init https://github.com/dmorrison/dotfiles.git
 echo
 
 echo "Applying dotfiles..."

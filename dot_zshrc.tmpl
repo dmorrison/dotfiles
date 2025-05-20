@@ -1,5 +1,5 @@
 {{- if eq .hostType "work" -}}
-# Q pre block. Keep at the top of this file.
+# Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 {{- end }}
 
@@ -133,12 +133,14 @@ source $ZSH/oh-my-zsh.sh
 ## --------------------------------
 
 {{ if eq .hostType "work" -}}
-# Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
-
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/m377065/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+{{- end }}
+
+{{ if eq .hostType "work" -}}
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
 {{- end }}

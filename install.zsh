@@ -27,6 +27,25 @@ else
   # Note: The Homebrew installation script installs the Command Line Developer Tools (needed
   # for Git, etc) if they're not already installed.
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  if [[ $? -ne 0 ]]; then
+    echo
+    echo "Error installing Homebrew. Please check the output above."
+    exit 1
+  fi
+  echo
+
+  echo "Appending to ~/.zprofile to add Homebrew to PATH..."
+  echo >> ~/.zprofile
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+  echo
+
+  echo "Adding Homebrew to PATH for the current shell that is running the install script..."
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  if [[ $? -ne 0 ]]; then
+    echo
+    echo "Error adding Homebrew to the current shell's PATH. Please check the output above."
+    exit 1
+  fi
   echo
 fi
 

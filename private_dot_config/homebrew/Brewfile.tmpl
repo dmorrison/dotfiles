@@ -33,6 +33,13 @@ cask "knockknock"
 cask "ngrok"
 cask "steermouse"
 
+{{ if eq .hostType "home" }}
+# Home-specific casks
+cask 1password
+cask messenger
+cask telegram
+{{ end }}
+
 {{ if eq .hostType "work" }}
 # Work-specific casks
 cask "aws-vault"
@@ -40,24 +47,28 @@ cask "aws-vault"
 
 mas "1Password for Safari", id: 1569813296
 mas "ColorSlurp", id: 1287239339
-mas "forScore", id: 363738376
 mas "Free Ruler", id: 1483172210
-mas "Messenger", id: 1480068668
 mas "Parcel", id: 639968404
 mas "Speedtest", id: 1153157709
-mas "Telegram", id: 747648890
+
+{{ if eq .hostType "home" }}
+# Home-specific mas apps
+mas "forScore", id: 363738376
+{{ end }}
 
 {{ if eq .hostType "work" }}
 # Work-specific mas apps
 mas "1Blocker", id: 1365531024
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
+mas "Messenger", id: 1480068668
 mas "Microsoft Word", id: 462054704
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Ping", id: 1532271726
 mas "Pins", id: 1547106997
 mas "Rapidmg", id: 6451349778
+mas "Telegram", id: 747648890
 mas "TickTick", id: 966085870
 mas "Tim", id: 1449619230
 mas "Twitter", id: 1482454543

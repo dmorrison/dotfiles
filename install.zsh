@@ -36,15 +36,30 @@ if brew list --versions chezmoi &> /dev/null; then
 else
   echo "Chezmoi not found. Installing Chezmoi via Homebrew..."
   brew install chezmoi
+  if [[ $? -ne 0 ]]; then
+    echo
+    echo "Error installing Chezmoi via Homebrew. Please check the output above."
+    exit 1
+  fi
 fi
 echo
 
 echo "Initializing Chezmoi (if needed)..."
 chezmoi init https://github.com/dmorrison/dotfiles.git
+if [[ $? -ne 0 ]]; then
+  echo
+  echo "Error initializing Chezmoi. Please check the output above."
+  exit 1
+fi
 echo
 
-echo "Applying dotfiles..."
+echo "Applying dotfiles via Chezmoi..."
 chezmoi apply -v
+if [[ $? -ne 0 ]]; then
+  echo
+  echo "Error applying dotfiles via Chezmoi. Please check the output above."
+  exit 1
+fi
 echo
 
 echo "Installing/updating Homebrew items..."

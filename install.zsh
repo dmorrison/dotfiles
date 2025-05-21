@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+# Thanks to: https://github.com/donnybrilliant/install.sh/blob/f659cf869273f39bd839b0ca2ff0ba2a101ebade/install.sh
+
 echo "Starting install script..."
 echo
 

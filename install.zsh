@@ -34,11 +34,6 @@ else
   fi
   echo
 
-  echo "Appending to ~/.zprofile to add Homebrew to PATH..."
-  echo >> ~/.zprofile
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-  echo
-
   echo "Adding Homebrew to PATH for the current shell that is running the install script..."
   eval "$(/opt/homebrew/bin/brew shellenv)"
   if [[ $? -ne 0 ]]; then

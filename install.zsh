@@ -76,6 +76,15 @@ if [[ $? -ne 0 ]]; then
 fi
 echo
 
+echo "Sourcing .zshrc (to initialize Oh My Zsh, etc)..."
+source ~/.zshrc
+if [[ $? -ne 0 ]]; then
+  echo
+  echo "☠️ Error sourcing .zshrc. Please check the output above."
+  exit 1
+fi
+echo
+
 echo "Installing/upgrading Homebrew items..."
 brew bundle install --global
 if [[ $? -ne 0 ]]; then

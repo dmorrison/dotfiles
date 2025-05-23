@@ -67,6 +67,16 @@ if [[ $? -ne 0 ]]; then
 fi
 echo
 
+echo "Pulling down my latest dotfiles..."
+cd "$(chezmoi source-path)"
+git pull
+if [[ $? -ne 0 ]]; then
+  echo
+  echo "☠️ Error pulling down my latest dotfiles. Please check the output above."
+  exit 1
+fi
+echo
+
 echo "Applying dotfiles via Chezmoi..."
 chezmoi apply
 if [[ $? -ne 0 ]]; then
@@ -95,3 +105,7 @@ fi
 echo
 
 echo "Setup complete!"
+echo
+echo "👋 If this is your first time running this script, execute this manually:"
+echo "source ~/.zshrc"
+echo

@@ -81,7 +81,7 @@ if [[ $? -ne 0 ]]; then
 fi
 echo
 
-echo "Installing/updating Homebrew items..."
+echo "Installing/upgrading Homebrew items..."
 brew bundle install --global
 if [[ $? -ne 0 ]]; then
   echo

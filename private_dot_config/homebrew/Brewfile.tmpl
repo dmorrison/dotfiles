@@ -35,9 +35,9 @@ cask "steermouse"
 
 {{ if eq .hostType "home" }}
 # Home-specific casks
-cask 1password
-cask messenger
-cask telegram
+cask "1password"
+cask "messenger"
+cask "telegram"
 {{ end }}
 
 {{ if eq .hostType "work" }}

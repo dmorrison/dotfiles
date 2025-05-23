@@ -73,7 +73,7 @@ fi
 echo
 
 echo "Applying dotfiles via Chezmoi..."
-chezmoi apply -v
+chezmoi apply
 if [[ $? -ne 0 ]]; then
   echo
   echo "Error applying dotfiles via Chezmoi. Please check the output above."

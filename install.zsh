@@ -29,7 +29,7 @@ else
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   if [[ $? -ne 0 ]]; then
     echo
-    echo "Error installing Homebrew. Please check the output above."
+    echo "☠️ Error installing Homebrew. Please check the output above."
     exit 1
   fi
   echo
@@ -43,7 +43,7 @@ else
   eval "$(/opt/homebrew/bin/brew shellenv)"
   if [[ $? -ne 0 ]]; then
     echo
-    echo "Error adding Homebrew to the current shell's PATH. Please check the output above."
+    echo "☠️ Error adding Homebrew to the current shell's PATH. Please check the output above."
     exit 1
   fi
   echo
@@ -57,7 +57,7 @@ else
   brew install chezmoi
   if [[ $? -ne 0 ]]; then
     echo
-    echo "Error installing Chezmoi via Homebrew. Please check the output above."
+    echo "☠️ Error installing Chezmoi via Homebrew. Please check the output above."
     exit 1
   fi
 fi
@@ -67,7 +67,7 @@ echo "Initializing Chezmoi (if needed)..."
 chezmoi init https://github.com/dmorrison/dotfiles.git
 if [[ $? -ne 0 ]]; then
   echo
-  echo "Error initializing Chezmoi. Please check the output above."
+  echo "☠️ Error initializing Chezmoi. Please check the output above."
   exit 1
 fi
 echo
@@ -76,7 +76,7 @@ echo "Applying dotfiles via Chezmoi..."
 chezmoi apply
 if [[ $? -ne 0 ]]; then
   echo
-  echo "Error applying dotfiles via Chezmoi. Please check the output above."
+  echo "☠️ Error applying dotfiles via Chezmoi. Please check the output above."
   exit 1
 fi
 echo
@@ -85,7 +85,7 @@ echo "Installing/upgrading Homebrew items..."
 brew bundle install --global
 if [[ $? -ne 0 ]]; then
   echo
-  echo "Error running brew bundle. Please check the output above."
+  echo "☠️ Error running brew bundle. Please check the output above."
   exit 1
 fi
 echo

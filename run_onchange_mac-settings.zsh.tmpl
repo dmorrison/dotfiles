@@ -8,13 +8,15 @@ echo "👋 Running on-change script for macOS settings..."
 {{/* This makes the script run after each macOS update. */}}
 # MacOS build version: {{ output "sw_vers" "--buildVersion" }}
 
-echo "Setting macOS preference to enabled tap-to-click on built-in trackpad..."
-defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
-if [[ $? -ne 0 ]]; then
-  echo
-  echo "☠️ Error settting macOS preference. Please check the output above."
-  exit 1
-fi
+# Ehhhh, this is flakey. I got this to work kinda, but the change wasn't reflected
+# in the UI in System Settings. And you need to restart for it to take effect, maybe, partially?
+# echo "Setting macOS preference to enabled tap-to-click on built-in trackpad..."
+# defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+# if [[ $? -ne 0 ]]; then
+#   echo
+#   echo "☠️ Error settting macOS preference. Please check the output above."
+#   exit 1
+# fi
 
 # This doesn't seem to do anything.
 # echo "Killing cfprefsd to reload cached preferences (the cfprefsd process should restart)..."

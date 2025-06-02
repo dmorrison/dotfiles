@@ -109,3 +109,5 @@ echo
 echo "👋 If this is your first time running this script, execute this manually:"
 echo "source ~/.zshrc"
 echo
+echo "👋👋 If macOS preferences were modified, then you probably need to restart."
+echo

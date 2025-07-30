@@ -1,8 +1,3 @@
-{{- if eq .hostType "work" -}}
-# Amazon Q pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
-{{- end }}
-
 # Set the base directory for user-specific config files. I am doing this
 # at the top of this file (instead of in "$ZSH_CUSTOM/variables.zsh") because
 # I want to use it to specify $ZSH_CUSTOM.
@@ -138,9 +133,4 @@ fpath=(/Users/m377065/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
-{{- end }}
-
-{{ if eq .hostType "work" -}}
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
 {{- end }}

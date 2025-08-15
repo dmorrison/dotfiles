@@ -44,6 +44,15 @@ else
   echo
 fi
 
+echo "Updating Homebrew..."
+brew update
+if [[ $? -ne 0 ]]; then
+  echo
+  echo "☠️ Error updating Homebrew. Please check the output above."
+  exit 1
+fi
+echo
+
 echo "Checking if Chezmoi is installed..."
 if brew list --versions chezmoi &> /dev/null; then
   echo "Chezmoi is already installed (via Homebrew)."

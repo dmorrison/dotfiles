@@ -44,6 +44,7 @@ cask "telegram"
 {{ if eq .hostType "work" }}
 # Work-specific casks
 cask "aws-vault"
+cask "figma"
 {{ end }}
 
 mas "1Password for Safari", id: 1569813296
@@ -73,7 +74,6 @@ mas "Zapper", id: 1611386769
 
 {{ if eq .hostType "work" }}
 # Work-specific extensions for VS Code
-vscode "achil.vscode-javascript-repl"
 vscode "albert.tabout"
 vscode "alefragnani.bookmarks"
 vscode "amodio.tsl-problem-matcher"

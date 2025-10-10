@@ -104,6 +104,15 @@ if [[ $? -ne 0 ]]; then
 fi
 echo
 
+echo "Installing Rosetta 2 (for the \"fujitsu-scansnap-home\" cask, etc)..."
+softwareupdate --install-rosetta
+if [[ $? -ne 0 ]]; then
+  echo
+  echo "☠️ Error install Rosetta 2. Please check the output above."
+  exit 1
+fi
+echo
+
 echo "Installing/upgrading Homebrew items..."
 brew bundle install --global
 if [[ $? -ne 0 ]]; then

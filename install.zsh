@@ -105,7 +105,7 @@ fi
 echo
 
 echo "Installing Rosetta 2 (for the \"fujitsu-scansnap-home\" cask, etc)..."
-softwareupdate --install-rosetta
+softwareupdate --install-rosetta --agree-to-license
 if [[ $? -ne 0 ]]; then
   echo
   echo "☠️ Error install Rosetta 2. Please check the output above."

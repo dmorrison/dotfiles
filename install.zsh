@@ -123,7 +123,7 @@ fi
 echo
 
 echo "Installing/upgrading Homebrew items..."
-brew bundle install --global
+brew bundle install --global --upgrade
 if [[ $? -ne 0 ]]; then
   echo
   echo "☠️ Error running brew bundle. Please check the output above."

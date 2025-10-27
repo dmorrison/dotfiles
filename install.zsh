@@ -104,6 +104,20 @@ if [[ $? -ne 0 ]]; then
 fi
 echo
 
+# --- Cleanup Section ---
+echo "Running Homebrew cleanup to remove unlisted packages..."
+
+# Use --force for automation, but echo a warning
+echo "WARNING: Forcing cleanup! Only packages listed in Brewfile will remain."
+brew bundle cleanup --global --force
+
+if [[ $? -ne 0 ]]; then
+    echo "☠️ Error during Brewfile cleanup. Please check the output above."
+fi
+
+echo "Homebrew cleanup complete."
+# -----------------------
+
 echo "Installing Rosetta 2 (for the \"fujitsu-scansnap-home\" cask, etc)..."
 softwareupdate --install-rosetta --agree-to-license
 if [[ $? -ne 0 ]]; then

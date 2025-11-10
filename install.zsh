@@ -104,8 +104,26 @@ if [[ $? -ne 0 ]]; then
 fi
 echo
 
+echo "Running Homebrew cleanup to remove unlisted packages in Brewfile..."
+brew bundle cleanup --global --force
+if [[ $? -ne 0 ]]; then
+    echo
+    echo "☠️ Error during Brewfile cleanup. Please check the output above."
+    exit 1
+fi
+echo
+
+echo "Installing Rosetta 2 (for the \"fujitsu-scansnap-home\" cask, etc)..."
+softwareupdate --install-rosetta --agree-to-license
+if [[ $? -ne 0 ]]; then
+  echo
+  echo "☠️ Error install Rosetta 2. Please check the output above."
+  exit 1
+fi
+echo
+
 echo "Installing/upgrading Homebrew items..."
-brew bundle install --global
+brew bundle install --global --upgrade
 if [[ $? -ne 0 ]]; then
   echo
   echo "☠️ Error running brew bundle. Please check the output above."

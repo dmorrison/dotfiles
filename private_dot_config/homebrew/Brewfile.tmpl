@@ -6,11 +6,13 @@ tap "saucelabs/tap"
 
 brew "chezmoi"
 brew "git"
+brew "ffmpeg" # For yt-dlp.
 brew "jq"
 brew "mas"
 brew "tmux"
 brew "trash", link: true
 brew "tree"
+brew "yt-dlp"
 
 {{ if eq .hostType "work" }}
 # Work-specific brews
@@ -25,21 +27,24 @@ brew "remotemobprogramming/brew/mob"
 
 cask "alt-tab"
 cask "bartender"
+cask "calibre"
 cask "elgato-stream-deck"
 cask "fujitsu-scansnap-home"
+cask "google-drive"
 cask "hazel"
-cask "karabiner-elements"
 cask "knockknock"
 cask "ngrok"
 cask "steermouse"
 cask "tailscale-app"
 cask "wifiman"
-cask "calibre"
+cask "visual-studio-code"
+cask "vlc"
 
 {{ if eq .hostType "home" }}
 # Home-specific casks
 cask "1password"
 cask "messenger"
+cask "microsoft-onenote"
 cask "telegram"
 {{ end }}
 
@@ -54,7 +59,6 @@ mas "ColorSlurp", id: 1287239339
 mas "Free Ruler", id: 1483172210
 mas "Parcel", id: 639968404
 mas "Speedtest", id: 1153157709
-mas "TabBack for Safari", id: 1660506599
 mas "TabCloser 3", id: 6553966600
 
 {{ if eq .hostType "home" }}

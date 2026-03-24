@@ -5,18 +5,6 @@
 echo "Starting install script..."
 echo
 
-echo "Getting sudo access..."
-sudo -v
-echo
-
-echo "Keeping sudo access until the script is finished..."
-while true; do
-  sudo -n true
-  sleep 60
-  kill -0 "$$" || exit
-done 2>/dev/null &
-echo
-
 echo "Checking for Homebrew..."
 if command -v brew &> /dev/null; then
   echo "Homebrew is already installed."

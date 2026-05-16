@@ -10,6 +10,7 @@ brew "git"
 brew "ffmpeg" # For yt-dlp.
 brew "jq"
 brew "mas"
+brew "nvm"
 brew "tmux"
 brew "trash", link: true
 brew "tree"
@@ -19,7 +20,6 @@ brew "yt-dlp"
 # Work-specific brews
 brew "awscli"
 brew "docker-credential-helper-ecr"
-brew "nvm"
 brew "pkgconf"
 brew "pyenv"
 brew "yarn"
@@ -58,11 +58,6 @@ cask "microsoft-onenote"
 cask "telegram"
 {{ end }}
 
-{{ if eq .hostType "work" }}
-# Work-specific casks
-cask "aws-vault"
-cask "figma"
-{{ end }}
 
 mas "1Password for Safari", id: 1569813296
 mas "ColorSlurp", id: 1287239339

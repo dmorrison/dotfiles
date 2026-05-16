@@ -1,17 +1,15 @@
-{{ if eq .hostType "work" -}}
-# 2023-02-10: I uninstalled, purged folders, then reinstalled NVM via Homebrew. It said
-# to create a ~/.nvm folder and also add this to my ~/.zshrc (or equivalent) file. It also
-# recommended doing `export NVM_DIR="$HOME/.nvm"`, but I chose to not do it since I want
-# my installed Node versions to be reset on upgrade/uninstall. Homebrew's advice was:
-# You can set $NVM_DIR to any location, but leaving it unchanged from
-# /opt/homebrew/opt/nvm will destroy any nvm-installed Node installations
-# upon upgrade/reinstall.
+# 2023-02-10: I uninstalled, purged folders, then reinstalled NVM via Homebrew (on my HEB
+# laptop). The text spit out at the end said to create a ~/.nvm folder and also add this
+# to my ~/.zshrc (or equivalent) file. It also recommended doing `export NVM_DIR="$HOME/.nvm"`,
+# but I chose to not do it since I want my installed Node versions to be reset on
+# upgrade/uninstall. Homebrew's advice was:
+# You can set $NVM_DIR to any location, but leaving it unchanged from /opt/homebrew/opt/nvm
+# will destroy any nvm-installed Node installations upon upgrade/reinstall.
 # export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # 2023-01-12: Via Brooks Lybrand at HEB.
-# https://heb.slack.com/archives/GL8TYS681/p1673538861396909?thread_ts=1673535602.065399&cid=GL8TYS681
 # (via https://github.com/nvm-sh/nvm#calling-nvm-use-automatically-in-a-directory-with-a-nvmrc-file)
 autoload -U add-zsh-hook
 load-nvmrc() {
@@ -33,4 +31,3 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
-{{- end}}

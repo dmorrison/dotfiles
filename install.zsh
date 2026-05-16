@@ -83,11 +83,43 @@ if [[ $? -ne 0 ]]; then
 fi
 echo
 
-echo "Sourcing .zshrc (to initialize Oh My Zsh, etc)..."
+echo "Checking if NVM is installed..."
+if brew list --versions nvm &> /dev/null; then
+  echo "NVM is already installed (via Homebrew)."
+else
+  echo "NVM not found. Installing via Homebrew..."
+  brew install nvm
+  if [[ $? -ne 0 ]]; then
+    echo
+    echo "☠️ Error installing NVM via Homebrew. Please check the output above."
+    exit 1
+  fi
+fi
+echo
+
+echo "Sourcing .zshrc (to initialize Oh My Zsh, NVM, etc)..."
 source ~/.zshrc
 if [[ $? -ne 0 ]]; then
   echo
   echo "☠️ Error sourcing .zshrc. Please check the output above."
+  exit 1
+fi
+echo
+
+echo "Installing latest Node LTS version via NVM..."
+nvm install --lts
+if [[ $? -ne 0 ]]; then
+  echo
+  echo "☠️ Error installing latest Node LTS version via NVM. Please check the output above."
+  exit 1
+fi
+echo
+
+echo "Setting latest Node LTS version as default..."
+nvm alias default "lts/*"
+if [[ $? -ne 0 ]]; then
+  echo
+  echo "☠️ Error setting latest Node LTS version as default via NVM. Please check the output above."
   exit 1
 fi
 echo

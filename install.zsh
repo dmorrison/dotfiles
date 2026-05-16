@@ -45,7 +45,7 @@ echo "Checking if Chezmoi is installed..."
 if brew list --versions chezmoi &> /dev/null; then
   echo "Chezmoi is already installed (via Homebrew)."
 else
-  echo "Chezmoi not found. Installing Chezmoi via Homebrew..."
+  echo "Chezmoi not found. Installing via Homebrew..."
   brew install chezmoi
   if [[ $? -ne 0 ]]; then
     echo

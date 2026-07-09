@@ -125,7 +125,7 @@ fi
 echo
 
 echo "Running Homebrew cleanup to remove unlisted packages in Brewfile..."
-brew bundle cleanup --global --force
+brew bundle cleanup --global --force --verbose
 if [[ $? -ne 0 ]]; then
     echo
     echo "☠️ Error during Brewfile cleanup. Please check the output above."
